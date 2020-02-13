@@ -1,0 +1,48 @@
+@import '../../variables.scss';
+
+.button {
+  display: inline-block;
+  margin: 0 .75rem;
+  padding: .375rem .75rem;
+  border: solid $color-button-normal-border;
+  border-radius: .25rem;
+  font-weight: 400;
+  font-size: 1rem;
+  color: $color-button-normal-text;
+  background-color: $color-button-normal-content;
+  user-select: none;
+  transition: color .15s ease-in-out,
+              background-color .15s ease-in-out,
+              border-color .15s ease-in-out;
+              // box-shadow .15s ease-in-out;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-button-normal-content-hover;
+    border-color:$color-button-normal-border-hover;
+  }
+
+  &.button__type-primary {
+    color: $color-button-primary-text;
+    background-color: $color-button-primary-content;
+    border-color: $color-button-primary-border;
+    &:hover {
+      background-color: $color-button-primary-content-hover;
+      border-color: $color-button-primary-border-hover;
+    }
+  }
+
+  &.button__type-danger {
+    color: $color-button-danger-text;
+    background-color: $color-button-danger-content;
+    border-color: $color-button-danger-border;
+    &:hover {
+      background-color: $color-button-danger-content-hover;
+      border-color: $color-button-danger-border-hover;
+    }
+  }
+}
+
+

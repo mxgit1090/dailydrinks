@@ -1,0 +1,38 @@
+@import '../../variables.scss';
+
+@mixin animation() {
+  transition: color .15s ease-in-out,
+              border-color .15s ease-in-out;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: .5em;
+  @include animation();
+  &.form__label-error {
+    color: $color-danger;
+  }
+}
+
+.form__label-alert {
+  color: $color-danger;
+  font-weight: 700;
+}
+
+.form__input {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: .5rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+  border: 1px solid $color-border;
+  @include animation();
+  &.form__input-error {
+    border-color: $color-danger;
+    color: $color-danger;
+  }
+}
+
+.form__button-group {
+  margin: 1rem -.75rem 0;
+}

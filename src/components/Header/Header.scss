@@ -1,0 +1,9 @@
+@import '../../variables.scss';
+
+.header__title {
+  display: inline-block;
+  margin-right: .75rem;
+  color: $color-text;
+  vertical-align: bottom;
+  user-select: none;
+}
