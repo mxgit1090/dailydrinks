@@ -12,7 +12,7 @@ https://github.com/17media/frontend-hq/blob/master/pretest2.md
 function App() {
   const [currentOrder, setCurrentOrder] = useState(null);
   const [orders, setOrders] = useState([]);
-  const createOrder = order => {
+  const addOrder = order => {
     setOrders(ordersToMutate => ([
       ...ordersToMutate,
       {
@@ -32,7 +32,7 @@ function App() {
       ];
     });
   };
-  const removeOrder = order => {
+  const deleteOrder = order => {
     setOrders(ordersToMutate =>  
       ordersToMutate.filter(({ id }) => id !== order?.id)
     );
@@ -43,7 +43,7 @@ function App() {
       <Header
         formOpen={formOpen}
         orderExist={!!(currentOrder?.id)}
-        onCreate={() => {
+        onAdd={() => {
           setCurrentOrder({});
         }}
       />
@@ -55,7 +55,7 @@ function App() {
               if (order.id) {
                 editOrder(order);
               } else {
-                createOrder(order);
+                addOrder(order);
               }
               setCurrentOrder(null);
             }}
@@ -75,8 +75,8 @@ function App() {
                 onEdit={() => {
                   setCurrentOrder(order);
                 }}
-                onRemove={() => {
-                  removeOrder(order);
+                onDelete={() => {
+                  deleteOrder(order);
                 }}
               />
             ))}

@@ -9,7 +9,7 @@ function Order(props) {
     price,
     notes,
     onEdit,
-    onRemove,
+    onDelete,
   } = props;
   return (
     <div className="order__container">
@@ -24,9 +24,9 @@ function Order(props) {
         </Button>
         <Button
           type={TYPE.DANGER}
-          onClick={onRemove}
+          onClick={onDelete}
         >
-          Remove
+          Delete
         </Button>
       </div>
     </div>
@@ -35,16 +35,16 @@ function Order(props) {
 
 Order.propTypes = {
     name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.string.isRequired,
     notes: PropTypes.string,
     onEdit: PropTypes.func,
-    onRemove: PropTypes.func,
+    onDelete: PropTypes.func,
 };
 
 Order.defaultProps = {
     notes: null,
     onEdit: () => {},
-    onRemove: () => {},
+    onDelete: () => {},
 };
 
 export default Order

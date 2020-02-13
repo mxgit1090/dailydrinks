@@ -7,22 +7,22 @@ function Header(props) {
   const {
     formOpen,
     orderExist,
-    onCreate,
+    onAdd,
   } = props;
   return (
     <h1>
       <div className="header__title">
         {!formOpen
-          ? 'Daily Drink'
-          : `${orderExist ? 'Update' : 'Create'} Order`
+          ? 'Daily Drinks'
+          : `${orderExist ? 'Edit' : 'Add'} Order`
         }
       </div>
       {!formOpen &&
       <Button
         type={TYPE.PRIMARY}
-        onClick={onCreate}
+        onClick={onAdd}
       >
-        Create
+        Add
       </Button>
     }
     </h1>
@@ -32,7 +32,7 @@ function Header(props) {
 Header.propTypes = {
   formOpen: PropTypes.bool,
   orderExist: PropTypes.bool,
-  onCreate: PropTypes.func,
+  onAdd: PropTypes.func,
 };
 
 export default Header;
