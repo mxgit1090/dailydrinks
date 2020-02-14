@@ -35,4 +35,10 @@ Header.propTypes = {
   onAdd: PropTypes.func,
 };
 
+Header.defaultProps = {
+  formOpen: false,
+  orderExist: false,
+  onAdd: () => {}
+};
+
 export default Header;

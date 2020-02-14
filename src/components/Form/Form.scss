@@ -27,7 +27,7 @@
   border-radius: .25rem;
   border: 1px solid $color-border;
   @include animation();
-  &.form__input-error {
+  &.form__input-alert {
     border-color: $color-danger;
     color: $color-danger;
   }

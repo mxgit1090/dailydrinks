@@ -34,17 +34,17 @@ function Order(props) {
 };
 
 Order.propTypes = {
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    notes: PropTypes.string,
-    onEdit: PropTypes.func,
-    onDelete: PropTypes.func,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  notes: PropTypes.string,
+  onEdit: PropTypes.func,
+  onDelete: PropTypes.func,
 };
 
 Order.defaultProps = {
-    notes: null,
-    onEdit: () => {},
-    onDelete: () => {},
+  notes: null,
+  onEdit: () => {},
+  onDelete: () => {},
 };
 
 export default Order

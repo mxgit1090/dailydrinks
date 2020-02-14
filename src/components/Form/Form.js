@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import Button, { TYPE } from '../Button';
 import './Form.scss';
 
+function checkPriceValid(value) {
+  const price = parseInt(value, 10);
+  return !Number.isNaN(price) && Number.isInteger(price) && price >= 0;
+}
+
 function Form(props) {
   const {
     order,
@@ -22,28 +27,33 @@ function Form(props) {
   }
   const onSubmit = () => {
     // Check required fields:
-    if (!name) {
-      setErrorField('name', true);
-    } else {
+    const priceValid = checkPriceValid(price);
+    if (name && priceValid) {
       submit({
         id: order?.id ?? null,
         name,
-        price,
+        price: parseInt(price, 10),
         notes,
       });
+    } else {
+      setError(prevError => ({
+        ...prevError,
+        ...(!name ? { name: true } : {}),
+        ...(!priceValid ? { price: true } : {})
+      }));
     }
   };
   return (
     <div id="form">
       <label
         htmlFor="name"
-        className={`form__label ${error.name && 'form__label-error'}`}
+        className={`form__label ${error.name && 'form__label-alert'}`}
       >
         <span className="form__label-alert">*</span>Name
       </label>
       <input
         name="name"
-        className={`form__input ${error.name && 'form__input-error'}`}
+        className={`form__input ${error.name && 'form__input-alert'}`}
         placeholder="Please input name"
         value={name}
         onChange={event => {
@@ -53,20 +63,21 @@ function Form(props) {
       />
       <label
         htmlFor="price"
-        className="form__label"
+        className={`form__label ${error.price && 'form__label-alert'}`}
       >
-        Price
+        <span className="form__label-alert">*</span>Price
       </label>      
       <input
         name="price"
-        className="form__input"
+        className={`form__input ${error.price && 'form__input-alert'}`}
         type="number"
         min="0"
         placeholder="Please input price number"
         value={price}
         onChange={event => {
-          const value = event.target.value?.replace?.(/\D/g, '') || 0;
-          setPrice(parseInt(value, 10));
+          const value = event.target.value?.replace?.(/^0(\d.*)/, '$1');
+          setPrice(value);
+          setErrorField('price', false);
         }}
       />
       <label
