@@ -1,5 +1,5 @@
 # Daily Drinks
-Assignment for 17 media
+Assignment to 17 Media
 - Implenmented CRUD operations in App
 - Implenmented unit tests for components and app
 - Ensured RWD layout in both desktop and mobile environments
