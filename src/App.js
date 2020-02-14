@@ -26,7 +26,7 @@ function App() {
       const orderIndex = ordersToMutate.findIndex(({ id }) => id === order.id)
       if (orderIndex < 0) return ordersToMutate;
       return [
-        ...ordersToMutate.slice(0, orderIndex - 1),
+        ...ordersToMutate.slice(0, orderIndex),
         order,
         ...ordersToMutate.slice(orderIndex + 1, ordersToMutate.length),
       ];
