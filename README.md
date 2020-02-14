@@ -4,6 +4,10 @@ Assignment to 17 Media
 - Implenmented unit tests for components and app
 - Ensured RWD layout in both desktop and mobile environments
 
+## Demo links
+- [Codesandbox](https://codesandbox.io/s/github/mxgit1090/dailydrinks)
+- [Github Pages](https://mxgit1090.github.io/dailydrinks/)
+
 ## Used packages
 - `create-react-app`: React boilerplate for this app
 - `@testing-library`: For unit test
