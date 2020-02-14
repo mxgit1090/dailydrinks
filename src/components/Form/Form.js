@@ -65,7 +65,8 @@ function Form(props) {
         placeholder="Please input price number"
         value={price}
         onChange={event => {
-          setPrice(event.target.value);
+          const value = event.target.value?.replace?.(/\D/g, '') || 0;
+          setPrice(parseInt(value, 10));
         }}
       />
       <label

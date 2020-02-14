@@ -35,7 +35,7 @@ function Order(props) {
 
 Order.propTypes = {
     name: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
     notes: PropTypes.string,
     onEdit: PropTypes.func,
     onDelete: PropTypes.func,
