@@ -13,8 +13,8 @@ function App() {
   const [currentOrder, setCurrentOrder] = useState(null);
   const [orders, setOrders] = useState([]);
   const addOrder = order => {
-    setOrders(ordersToMutate => ([
-      ...ordersToMutate,
+    setOrders(prevOrders => ([
+      ...prevOrders,
       {
         ...order,
         id: nanoid(10)
@@ -22,19 +22,19 @@ function App() {
     ]));
   };
   const editOrder = order => {
-    setOrders(ordersToMutate => {
-      const orderIndex = ordersToMutate.findIndex(({ id }) => id === order.id)
-      if (orderIndex < 0) return ordersToMutate;
+    setOrders(prevOrders => {
+      const orderIndex = prevOrders.findIndex(({ id }) => id === order.id)
+      if (orderIndex < 0) return prevOrders;
       return [
-        ...ordersToMutate.slice(0, orderIndex),
+        ...prevOrders.slice(0, orderIndex),
         order,
-        ...ordersToMutate.slice(orderIndex + 1, ordersToMutate.length),
+        ...prevOrders.slice(orderIndex + 1, prevOrders.length),
       ];
     });
   };
   const deleteOrder = order => {
-    setOrders(ordersToMutate =>  
-      ordersToMutate.filter(({ id }) => id !== order?.id)
+    setOrders(prevOrders =>  
+      prevOrders.filter(({ id }) => id !== order?.id)
     );
   };
   const formOpen = currentOrder !== null; 

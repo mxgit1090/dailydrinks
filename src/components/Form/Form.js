@@ -20,8 +20,8 @@ function Form(props) {
   const [price, setPrice] = useState(order?.price ?? 0);
   const [notes, setNotes] = useState(order?.notes ?? '');
   const setErrorField = (fieldName, fieldErrored) => {
-    setError(errorToMutate => ({
-      ...errorToMutate,
+    setError(prevError => ({
+      ...prevError,
       [fieldName]: fieldErrored
     }));
   }
