@@ -5,7 +5,7 @@ Assignment to 17 Media
 - Ensured RWD layout in both desktop and mobile environments
 
 ## Demo links
-- [Codesandbox](https://codesandbox.io/s/github/mxgit1090/dailydrinks)
+- [CodeSandbox](https://codesandbox.io/s/github/mxgit1090/dailydrinks)
 - [Github Pages](https://mxgit1090.github.io/dailydrinks/)
 
 ## Used packages
