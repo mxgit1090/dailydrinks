@@ -11,7 +11,7 @@
     "react-scripts": "3.3.1"
   },
   "dependencies": {
-    "nanoid": "^2.1.11",
+    "nanoid": "^3.1.31",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
